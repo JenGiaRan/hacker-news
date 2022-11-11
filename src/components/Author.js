@@ -13,7 +13,7 @@ const Author = (props) => {
     <>
       <p>Author id: {user.id}</p>
       <p> Karma score: {user.karma}</p>
-      {/* <img src={img} alt={"a dummy img"}></img> */}
+      <img src={img} alt={"a dummy img"}></img>
     </>
   ) : (
     <p>Upsy daisy</p>

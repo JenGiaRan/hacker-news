@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { getStoriesId, getStories } from "../services/HackerNewsStoriesApi";
+import { getStoriesId } from "../services/HackerNewsStoriesApi";
 import { getMultipleRandom } from "../utils/getMultipleRandom";
 import Story from "../components/Story";
+import "../styles/StoriesContainer.scss";
 
 const StoriesContainer = () => {
   const [storyIds, setStoryIds] = useState([]);
-  const [stories, setStories] = useState([]);
 
   useEffect(() => {
     getStoriesId().then((data) => {
@@ -14,7 +14,21 @@ const StoriesContainer = () => {
     });
   }, []);
 
-  return storyIds.map((storyId) => <Story key={storyId} id={storyId} />);
+  return (
+    <article
+      className="stories"
+      aria-labelledby="stories-section-header"
+      id="stories-section"
+    >
+      <div className="stories__container">
+        <ul className="stories__list">
+          {storyIds.map((storyId) => (
+            <Story key={storyId} id={storyId} />
+          ))}
+        </ul>
+      </div>
+    </article>
+  );
 };
 
 export default StoriesContainer;

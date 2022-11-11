@@ -1,0 +1,41 @@
+.stories {
+  &-container {
+    margin-bottom: 1.875rem;
+    @media (min-width: 250rem) {
+      max-width: calc((100% / 12) * 5);
+    }
+  }
+  h2 {
+    margin-bottom: 0.625rem;
+  }
+  p {
+    margin-bottom: 2rem;
+  }
+  hr {
+    margin-top: 20rem;
+    border-color: pink;
+  }
+  &__list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    @media (min-width: 250px) {
+      // To cancel margin-right on right side
+      margin-right: -2.5rem;
+      margin-bottom: 2.5rem;
+    }
+  }
+  &__load-more {
+    text-align: center;
+    p {
+      margin-top: 2.5rem;
+    }
+  }
+  select {
+    width: px2rem(200);
+    border: 1px solid gray;
+    padding: 1rem;
+    border-radius: 1px;
+    margin-bottom: 1rem;
+  }
+}

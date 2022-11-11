@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getStories, getUser } from "../services/HackerNewsStoriesApi";
 import Author from "./Author";
+import "../styles/Story.scss";
 
 const Story = (props) => {
   const [story, setStory] = useState({});
@@ -13,13 +14,19 @@ const Story = (props) => {
 
   return story ? (
     <>
-      <h1> {story.title}</h1>
-      <a href={story.url}> Read more</a>
-      <p>time: {story.time}</p>
-      <p>Score: {story.score}</p>
-      <p>Author: {story.by}</p>
-      <p>Author info: </p>
-      <Author user={story.by} />
+      <li>
+        <div className="story">
+          <div className="story__text-section">
+            <h1> {story.title}</h1>
+            <a href={story.url}> Read more</a>
+            <p>time: {story.time}</p>
+            <p>Score: {story.score}</p>
+            <p>Author: {story.by}</p>
+            <p>Author info: </p>
+            <Author user={story.by} />
+          </div>
+        </div>
+      </li>
     </>
   ) : (
     <p>Upsy daisy</p>

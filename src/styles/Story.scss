@@ -1,0 +1,38 @@
+.story {
+  line-height: 1.57;
+  position: relative;
+  overflow: hidden;
+  width: 40rem;
+  margin-bottom: 10rem;
+  margin-right: 2.5rem;
+  color: black;
+  border-radius: 2rem;
+  min-height: px2rem(470);
+  height: auto;
+  background-color: beige;
+
+  button {
+    width: 100%;
+    margin-top: 1rem;
+  }
+  &__image-section {
+    height: px2rem(198);
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    width: 100%;
+  }
+  &__text-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: px2rem(272);
+    padding: px2rem(32);
+    h2 {
+      font-size: px2rem(18);
+      margin-bottom: px2rem(8);
+      color: inherit;
+    }
+  }
+}
