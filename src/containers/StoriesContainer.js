@@ -1,16 +1,14 @@
 import React, { useEffect, useState } from "react";
-import { getStoriesId } from "../services/HackerNewsStoriesApi";
-import { getMultipleRandom } from "../utils/getMultipleRandom";
+import { getStories } from "../services/HackerNewsStoriesApi";
 import Story from "../components/Story";
 import "../styles/StoriesContainer.scss";
 
 const StoriesContainer = () => {
-  const [storyIds, setStoryIds] = useState([]);
+  const [stories, setStories] = useState([]);
 
   useEffect(() => {
-    getStoriesId().then((data) => {
-      const randomStories = getMultipleRandom(data);
-      setStoryIds(randomStories);
+    getStories().then((data) => {
+      setStories(data);
     });
   }, []);
 
@@ -22,8 +20,8 @@ const StoriesContainer = () => {
     >
       <div className="stories__container">
         <ul className="stories__list">
-          {storyIds.map((storyId) => (
-            <Story key={storyId} id={storyId} />
+          {stories.map((id, i) => (
+            <Story key={i} story={id} />
           ))}
         </ul>
       </div>

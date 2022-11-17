@@ -16,12 +16,17 @@
     margin-top: 1rem;
   }
   &__image-section {
-    height: px2rem(198);
-    object-fit: cover;
+    height: 20rem;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
     width: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+  &__image {
+    position: absolute;
+    height: auto;
   }
   &__text-section {
     display: flex;
