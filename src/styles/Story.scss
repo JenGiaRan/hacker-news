@@ -2,18 +2,17 @@
   line-height: 1.57;
   position: relative;
   overflow: hidden;
-  width: 40rem;
+  width: 30rem;
   margin-bottom: 10rem;
   margin-right: 2.5rem;
   color: black;
-  border-radius: 2rem;
+  border-radius: 1rem;
   min-height: px2rem(470);
   height: auto;
-  background-color: beige;
+  background-color: #dcdddf;
 
-  button {
-    width: 100%;
-    margin-top: 1rem;
+  h1 {
+    padding: 1rem;
   }
   &__image-section {
     height: 20rem;
@@ -23,6 +22,10 @@
     width: 100%;
     position: relative;
     overflow: hidden;
+
+    & :hover {
+      opacity: 0.5;
+    }
   }
   &__image {
     position: absolute;
@@ -33,11 +36,29 @@
     flex-direction: column;
     justify-content: space-between;
     min-height: px2rem(272);
-    padding: px2rem(32);
-    h2 {
-      font-size: px2rem(18);
-      margin-bottom: px2rem(8);
-      color: inherit;
+    padding: 1rem;
+  }
+  &__info-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    background-color: #8d8c90;
+    min-height: 2.5rem;
+    padding: 0.5rem;
+
+    svg {
+      padding-right: 0.5rem;
+      g:hover text {
+        display: block;
+      }
     }
+  }
+
+  a:link {
+    color: black;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #389fbc;
   }
 }

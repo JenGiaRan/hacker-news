@@ -17,9 +17,9 @@ const getStory = async (id) => {
   }
 };
 
-export const getStories = async () => {
+export const getStories = async (type) => {
   try {
-    const storyIds = await fetch(`${BASE_API_URL}/topstories.json`);
+    const storyIds = await fetch(`${BASE_API_URL}/${type}stories.json`);
     const data = await storyIds.json();
     const stories = await Promise.all(getMultipleRandom(data).map(getStory));
     stories.sort((a, b) => a.score - b.score);

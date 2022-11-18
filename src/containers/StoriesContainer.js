@@ -3,14 +3,16 @@ import { getStories } from "../services/HackerNewsStoriesApi";
 import Story from "../components/Story";
 import "../styles/StoriesContainer.scss";
 
-const StoriesContainer = () => {
-  const [stories, setStories] = useState([]);
+const StoriesContainer = ({ stories }) => {
+  // const [stories, setStories] = useState([]);
 
-  useEffect(() => {
-    getStories().then((data) => {
-      setStories(data);
-    });
-  }, []);
+  // useEffect(() => {
+  //   getStories("top").then((data) => {
+  //     setStories(data);
+  //   });
+  // }, []);
+
+  console.log(stories);
 
   return (
     <article
