@@ -1,64 +1,47 @@
 .story {
-  line-height: 1.57;
   position: relative;
   overflow: hidden;
-  width: 30rem;
-  margin-bottom: 10rem;
+  margin-bottom: 2.5rem;
   margin-right: 2.5rem;
   color: black;
   border-radius: 1rem;
-  min-height: px2rem(470);
-  height: auto;
-  background-color: #dcdddf;
 
-  h1 {
-    padding: 1rem;
+  flex-direction: row;
+  justify-content: flex-start;
+  @media (min-width: 75rem) {
+    display: flex;
   }
   &__image-section {
-    height: 20rem;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    width: 100%;
-    position: relative;
-    overflow: hidden;
+    width: 5rem;
 
-    & :hover {
-      opacity: 0.5;
-    }
+    padding-right: 2.5rem;
   }
-  &__image {
-    position: absolute;
-    height: auto;
-  }
-  &__text-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-height: px2rem(272);
-    padding: 1rem;
-  }
-  &__info-section {
-    display: flex;
+  &__info {
     flex-direction: row;
-    justify-content: space-around;
-    background-color: #8d8c90;
-    min-height: 2.5rem;
-    padding: 0.5rem;
-
-    svg {
-      padding-right: 0.5rem;
-      g:hover text {
-        display: block;
-      }
+    justify-content: flex-start;
+    @media (min-width: 75rem) {
+      display: flex;
     }
   }
-
   a:link {
     color: black;
     text-decoration: none;
   }
   a:hover {
     color: #389fbc;
+  }
+  h1 {
+    margin: 0;
+  }
+  p {
+    padding-right: 2rem;
+    margin: 0;
+    margin-top: 1rem;
+    color: gray;
+  }
+
+  svg {
+    padding-right: 0.5rem;
+    vertical-align: bottom;
   }
 }

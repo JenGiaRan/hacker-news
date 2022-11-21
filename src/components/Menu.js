@@ -6,45 +6,44 @@ import "../styles/Menu.scss";
 const Menu = () => {
   const [type, setType] = useState("top");
   const [stories, setStories] = useState([]);
-  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     getStories(type).then((data) => {
       data && setStories(data);
       console.log(type);
-      setIsLoading(false);
     });
   }, [type]);
-  if (isLoading) {
-    return <p>isLoading</p>;
-  }
   return (
     <>
-      <div className="menu">
-        <button
-          onClick={() => {
-            setIsLoading(true);
-            setType("top");
-          }}
-        >
-          Top
-        </button>
-        <button
-          onClick={() => {
-            setIsLoading(true);
-            setType("new");
-          }}
-        >
-          New
-        </button>
-        <button
-          onClick={() => {
-            setIsLoading(true);
-            setType("best");
-          }}
-        >
-          Best
-        </button>
+      <div className="content">
+        <h1 className="header"> Hacker News </h1>
+        <div className="menu">
+          <button
+            className="tablink"
+            id="Top"
+            onClick={() => {
+              setType("top");
+            }}
+          >
+            TOP
+          </button>
+          <button
+            className="tablink"
+            onClick={() => {
+              setType("new");
+            }}
+          >
+            NEW
+          </button>
+          <button
+            className="tablink"
+            onClick={() => {
+              setType("best");
+            }}
+          >
+            BEST
+          </button>
+        </div>
       </div>
       <StoriesContainer stories={stories}></StoriesContainer>
     </>

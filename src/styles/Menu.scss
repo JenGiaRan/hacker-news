@@ -1,8 +1,37 @@
-.menu {
+.tablink {
   background-color: #444;
-  padding: 1rem;
+  color: beige;
+  float: right;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 0 2.5rem;
+  font-size: large;
+  font-family: "Dancing Script";
+  text-align: center;
+}
 
-  button {
-    padding: 0.5rem;
-  }
+.tablink:hover {
+  background-color: #777;
+}
+
+.header {
+  font-family: "Dancing Script", cursive;
+  color: beige;
+  cursor: pointer;
+}
+
+.content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #444;
+  min-height: 2.5rem;
+  padding: 0.5rem;
+}
+
+.menu {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
 }
