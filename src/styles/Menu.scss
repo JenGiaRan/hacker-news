@@ -1,6 +1,8 @@
+@import "styles.scss";
+
 .tablink {
-  background-color: #444;
-  color: beige;
+  background-color: $main;
+  color: $font-primary;
   float: right;
   border: none;
   outline: none;
@@ -9,10 +11,14 @@
   font-size: large;
   font-family: "Dancing Script";
   text-align: center;
-}
 
-.tablink:hover {
-  background-color: #777;
+  &:focus {
+    background-color: #444;
+    outline: 2px solid black;
+  }
+  &:hover {
+    background-color: #777;
+  }
 }
 
 .header {
