@@ -2,15 +2,18 @@ import React, { useEffect, useState } from "react";
 import { getStories } from "../services/HackerNewsStoriesApi";
 import StoriesContainer from "../containers/StoriesContainer";
 import "../styles/Menu.scss";
+import LoadingSpinner from "./LoadingSpinner";
 
 const Menu = () => {
   const [type, setType] = useState("top");
+  const [loading, setLoading] = useState(true);
   const [stories, setStories] = useState([]);
-
+  console.log(type);
   useEffect(() => {
+    setLoading(true);
     getStories(type).then((data) => {
       data && setStories(data);
-      console.log(type);
+      setLoading(false);
     });
   }, [type]);
   return (
@@ -51,7 +54,11 @@ const Menu = () => {
           </button>
         </div>
       </div>
-      <StoriesContainer stories={stories}></StoriesContainer>
+      {loading ? (
+        <LoadingSpinner />
+      ) : (
+        <StoriesContainer stories={stories}></StoriesContainer>
+      )}
     </>
   );
 };

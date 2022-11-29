@@ -14,7 +14,7 @@ export const scoreSvg = (
   </svg>
 );
 
-export const author = (
+export const authorSvg = (
   <svg
     width={20}
     version="1.1"
@@ -27,7 +27,7 @@ export const author = (
     <path d="M160.419,375.973c0,3.313,2.687,6,6,6c11.182,0,20.279,9.098,20.279,20.279c0,3.313,2.687,6,6,6s6-2.687,6-6   c0-17.799-14.48-32.279-32.279-32.279C163.105,369.973,160.419,372.659,160.419,375.973z" />
   </svg>
 );
-export const karma = (
+export const karmaSvg = (
   <svg
     width={20}
     version="1.1"

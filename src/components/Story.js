@@ -1,9 +1,9 @@
-import { useEffect, useState } from "react";
+import { lazy, useEffect, useState } from "react";
 import img from "../assets/book.jpg";
 import "../styles/Story.scss";
 import { getUser } from "../services/HackerNewsStoriesApi";
 import { getDate } from "../utils/getDate.js";
-import { scoreSvg, author, karma } from "../assets/svg";
+import { scoreSvg, authorSvg, karmaSvg } from "../assets/svg";
 
 const Story = ({ story }) => {
   const [user, setUser] = useState({});
@@ -21,6 +21,7 @@ const Story = ({ story }) => {
             src={img}
             style={{ width: "5rem", textAlign: "center" }}
             alt={"a dummy img"}
+            loading={"lazy"}
           ></img>
         </div>
         <div className="story__text-section">
@@ -36,10 +37,10 @@ const Story = ({ story }) => {
           </div>
           <div className="story__info">
             <p>
-              {author} {user.id}
+              {authorSvg} {user.id}
             </p>
             <p>
-              {karma} {user.karma}{" "}
+              {karmaSvg} {user.karma}{" "}
             </p>
           </div>
         </div>

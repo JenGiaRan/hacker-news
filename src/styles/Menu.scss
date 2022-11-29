@@ -12,10 +12,6 @@
   font-family: "Dancing Script";
   text-align: center;
 
-  &:focus {
-    background-color: #444;
-    outline: 2px solid black;
-  }
   &:hover {
     background-color: #777;
   }
@@ -28,12 +24,15 @@
 }
 
 .content {
-  display: flex;
-  flex-direction: row;
   justify-content: space-between;
   background-color: #444;
   min-height: 2.5rem;
-  padding: 0.5rem;
+
+  @media (min-width: 30rem) {
+    display: flex;
+    flex-direction: row;
+    padding: 0.5rem;
+  }
 }
 
 .menu {
