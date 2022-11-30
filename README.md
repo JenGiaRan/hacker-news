@@ -16,6 +16,9 @@ The application is built with React, JavaScript, and SCSS.
 
 Users can filter stories based on weather they are new, top or best.
 
+The site is available at:
+https://jengiaran.github.io/hacker-news/
+
 ## Installation and Setup Instructions
 
 Clone down this repository. You will need node and npm installed globally on your machine.
