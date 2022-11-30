@@ -1,5 +1,5 @@
-import { lazy, useEffect, useState } from "react";
-import img from "../assets/book.jpg";
+import { useEffect, useState } from "react";
+import img from "../assets/book.png";
 import "../styles/Story.scss";
 import { getUser } from "../services/HackerNewsStoriesApi";
 import { getDate } from "../utils/getDate.js";
@@ -21,7 +21,7 @@ const Story = ({ story }) => {
           <img
             src={img}
             style={{ width: "5rem", textAlign: "center" }}
-            alt={"a dummy img"}
+            alt={" by Alexander Andrews on Unsplash"}
           ></img>
         </div>
         <div className="story__text-section">

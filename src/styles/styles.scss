@@ -1,4 +1,22 @@
-$main: #333333;
-$font-primary: #d66260;
-$font-secondary: #aea8a2;
+$font-stack: "Dancing Script";
+$primary-color: #333333;
+$secondary-color: #aea8a2;
+$tertiary-color: #d66260;
 $background: #f2f1ed;
+
+body {
+  color: $primary-color;
+  background-color: $background;
+}
+
+@mixin secondary-body {
+  font-family: $font-stack;
+  color: $tertiary-color;
+  background-color: $primary-color;
+}
+
+@mixin alignment {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

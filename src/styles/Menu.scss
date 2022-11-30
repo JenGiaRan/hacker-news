@@ -1,34 +1,8 @@
-@import "styles.scss";
+@import "styles";
 
-.tablink {
-  background-color: $main;
-  color: $font-primary;
-  float: right;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  padding: 0 2.5rem;
-  font-size: large;
-  font-family: "Dancing Script";
-  text-align: center;
-
-  &:hover {
-    background-color: #777;
-  }
-  &:focus {
-    background-color: #777;
-  }
-}
-
-.header {
-  font-family: "Dancing Script", cursive;
-  color: beige;
-  cursor: pointer;
-}
-
-.content {
+header {
+  @include secondary-body;
   justify-content: space-between;
-  background-color: #444;
   min-height: 2.5rem;
 
   @media (min-width: 30rem) {
@@ -36,11 +10,28 @@
     flex-direction: row;
     padding: 0.5rem;
   }
-}
+  .menu {
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 
-.menu {
-  text-align: center;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  button {
+    @include secondary-body;
+    float: right;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 0 2.5rem;
+    font-size: large;
+    text-align: center;
+
+    &:hover {
+      background-color: $secondary-color;
+    }
+    &:focus {
+      background-color: $secondary-color;
+    }
+  }
 }

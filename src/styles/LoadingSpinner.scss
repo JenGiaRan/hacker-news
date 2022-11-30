@@ -1,3 +1,5 @@
+@import "styles";
+
 @keyframes spinner {
   0% {
     transform: rotate(0deg);
@@ -9,8 +11,8 @@
 .loading-spinner {
   width: 50px;
   height: 50px;
-  border: 10px solid #f3f3f3; /* Light grey */
-  border-top: 10px solid #383636; /* Black */
+  border: 10px solid $secondary-color;
+  border-top: 10px solid $primary-color;
   border-radius: 50%;
   animation: spinner 1.5s linear infinite;
   justify-content: center;

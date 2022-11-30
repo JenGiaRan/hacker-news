@@ -1,45 +1,46 @@
+@import "styles";
+
 .story {
   position: relative;
   overflow: hidden;
   margin-bottom: 2.5rem;
   margin-right: 2.5rem;
-  color: black;
-  border-radius: 1rem;
 
-  flex-direction: row;
-  justify-content: flex-start;
   @media (min-width: 75rem) {
-    display: flex;
-  }
-  &__image-section {
-    width: 5rem;
-
-    padding-right: 2.5rem;
-  }
-  &__info {
-    flex-direction: row;
+    @include alignment;
     justify-content: flex-start;
-    @media (min-width: 75rem) {
-      display: flex;
-    }
   }
-  a:link {
-    color: black;
-    text-decoration: none;
-  }
-  a:hover {
-    color: #389fbc;
-  }
+
   h1 {
     margin: 0;
   }
+
   p {
     padding-right: 2rem;
     margin: 0;
     margin-top: 1rem;
-    color: gray;
+    color: $secondary-color;
   }
 
+  &__image-section {
+    width: 5rem;
+    padding-right: 2.5rem;
+  }
+  &__info {
+    @media (min-width: 75rem) {
+      @include alignment;
+      justify-content: flex-start;
+    }
+  }
+  a {
+    &:link {
+      color: $primary-color;
+      text-decoration: none;
+    }
+    &:hover {
+      color: $tertiary-color;
+    }
+  }
   svg {
     padding-right: 0.5rem;
     vertical-align: bottom;

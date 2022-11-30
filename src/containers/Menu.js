@@ -19,17 +19,16 @@ const Menu = () => {
     });
   }, [type]);
   return (
-    <header>
-      <div className="content">
+    <>
+      <header>
         <h1 className="header"> Hacker News </h1>
         <div className="menu">
           {names.map((item) => (
             <button
               aria-label={`${item.name} stories`}
-              className="tablink"
               id={item.name}
               key={item.name}
-              style={{ backgroundColor: type === item.name ? "#777" : "" }}
+              style={{ backgroundColor: type === item.name ? "#aea8a2" : "" }}
               onClick={() => {
                 setType(item.name);
               }}
@@ -38,13 +37,13 @@ const Menu = () => {
             </button>
           ))}
         </div>
-      </div>
+      </header>
       {loading ? (
         <LoadingSpinner />
       ) : (
         <StoriesContainer stories={stories}></StoriesContainer>
       )}
-    </header>
+    </>
   );
 };
 
