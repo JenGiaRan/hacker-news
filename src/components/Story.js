@@ -13,6 +13,7 @@ const Story = ({ story }) => {
       data && setUser(data);
     });
   }, [story]);
+
   return story ? (
     <>
       <div className="story">
@@ -21,16 +22,20 @@ const Story = ({ story }) => {
             src={img}
             style={{ width: "5rem", textAlign: "center" }}
             alt={"a dummy img"}
-            loading={"lazy"}
           ></img>
         </div>
         <div className="story__text-section">
           <h1>
             <a href={story.url}> {story.title}</a>
           </h1>
-          <div className="story__info">
-            <p>{getDate(story.time)}</p>
-            <p>
+          <div className="story__info" aria-label="story information">
+            <p
+              aria-label={`release date is ${getDate(story.time)}`}
+              tabIndex="0"
+            >
+              {getDate(story.time)}
+            </p>
+            <p tabIndex="0" aria-label={`the author score is ${story.score}`}>
               {scoreSvg}
               {story.score}
             </p>
@@ -47,7 +52,7 @@ const Story = ({ story }) => {
       </div>
     </>
   ) : (
-    <p>Upsy daisy</p>
+    <p>Sorry, we are having some problems loading this content</p>
   );
 };
 

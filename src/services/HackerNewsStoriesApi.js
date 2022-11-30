@@ -1,12 +1,5 @@
-// Top stories: https://hacker-news.firebaseio.com/v0/topstories.json
-// • Story item: https://hacker-news.firebaseio.com/v0/item/${id}.json
-// • User: https://hacker-news.firebaseio.com/v0/user/${id}.json
-// • API documentation: https://github.com/HackerNews/API
 import { getMultipleRandom } from "../utils/getMultipleRandom";
-export const BASE_API_URL = "https://hacker-news.firebaseio.com/v0/";
-export const topStoriesUrl = `${BASE_API_URL}/topstories.json`;
-export const storyUrl = `${BASE_API_URL}item/`;
-export const userUrl = `${BASE_API_URL}user/`;
+import { BASE_API_URL } from "../constants/constants";
 
 const getStory = async (id) => {
   try {
@@ -21,7 +14,11 @@ export const getStories = async (type) => {
   try {
     const storyIds = await fetch(`${BASE_API_URL}/${type}stories.json`);
     const data = await storyIds.json();
+
+    // map through 10 random storyIds and give me the stories of those ids
     const stories = await Promise.all(getMultipleRandom(data).map(getStory));
+
+    //sort stories in ascending order based on score and return sorted stories
     stories.sort((a, b) => a.score - b.score);
     return stories;
   } catch (err) {
@@ -30,7 +27,7 @@ export const getStories = async (type) => {
 };
 export const getUser = async (userId) => {
   try {
-    const response = await fetch(`${userUrl}${userId}.json`);
+    const response = await fetch(`${BASE_API_URL}user/${userId}.json`);
     return response.json();
   } catch (err) {
     throw Error(err);

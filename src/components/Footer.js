@@ -3,9 +3,9 @@ import "../styles/Footer.scss";
 
 const Footer = () => {
   return (
-    <div className="footer">
+    <footer className="footer">
       <p> POWERED BY: Jennifer Randazzo</p>
-    </div>
+    </footer>
   );
 };
 
